@@ -1,0 +1,45 @@
+{
+    "version": "1",
+    "stations": [
+        {
+            "id": "Right Side Walk",
+            "gpio": 16,
+            "active": true
+        },
+        {
+            "id": "Front Yard",
+            "gpio": 20,
+            "active": true
+        },
+        {
+            "id": "Front Folwer Bed",
+            "gpio": 21,
+            "active": false
+        },
+        {
+            "id": "Left Side Walk",
+            "gpio": 1001,
+            "active": true
+        },
+        {
+            "id": "Back Yard",
+            "gpio": 1002,
+            "active": false
+        },
+        {
+            "id": "Back Folwer Bed",
+            "gpio": 1003,
+            "active": false
+        },
+        {
+            "id": "Neighbour's Front Yard",
+            "gpio": 1004,
+            "active": false
+        },
+        {
+            "id": "Neighbour's Back Yard",
+            "gpio": 1005,
+            "active": false
+        }
+    ]
+}

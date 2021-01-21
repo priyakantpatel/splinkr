@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Splinkr</title>
+    
+    <!--<link href="libs/bootstrap-3.3.5/css/bootstrap.css" rel="stylesheet" />-->
+    <!-- Angular Material CSS now available via Google CDN; version 0.10 used here -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.10.0/angular-material.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--http://google.github.io/material-design-icons/-->
+    <!--https://www.google.com/design/icons/-->
+</head>
+<body ng-app="splinkr">
+    <md-content>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <md-button class="md-icon-button" aria-label="Settings">
+                    <md-icon md-font-set="material-icons">menu</md-icon>
+                </md-button>
+                <md-button ng-href="#/">Home</md-button>
+                <md-button ng-href="#/schedule">schedule</md-button>
+            </div>
+        </md-toolbar>
+
+        <div ng-view></div>
+    </md-content>
+    <script src="libs/angular-1.4.5/angular.js"></script>
+    <script src="libs/angular-1.4.5/angular-route.js"></script>
+    <script src="libs/angular-1.4.5/angular-animate.min.js"></script>
+    <script src="libs/angular-1.4.5/angular-aria.min.js"></script>
+
+    <!-- Angular Material Javascript now available via Google CDN; version 0.10 used here -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.10.0/angular-material.min.js"></script>
+
+    <script src="modules/service/splinkrService.js"></script>
+    <script src="modules/home/homeCtrl.js"></script>
+    <script src="modules/settings/settingsCtrl.js"></script>
+    <script src="modules/schedule/scheduleCtrl.js"></script>
+    <script src="routes.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+
+    <!--<script>
+        var socket = io();
+        socket.on('onStationChange', function (msg) {
+            console.log('[Client-onStationChange] ');
+            console.log(msg);
+        });
+    </script>-->
+</body>
+</html>

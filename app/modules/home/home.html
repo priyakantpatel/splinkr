@@ -1,0 +1,44 @@
+﻿<md-list>
+    <md-subheader class="md-no-sticky">Stations</md-subheader>
+    <md-divider ng-repeat-end></md-divider>
+    <md-list-item class="md-3-line" ng-repeat-start="station in vm.stations">
+        <md-button class="md-fab md-warn"
+                   ng-style="station.isRunning?{background: 'green'}:{}"
+                   ng-disabled="!station.active"
+                   aria-label="Station Information">
+            <md-icon md-font-set="material-icons">network_wifi</md-icon>
+        </md-button>
+
+        <div class="md-list-item-text" layout="column">
+            <h3>{{ station.id }}</h3>
+            <h4 ng-show="station.isRunning">{{ station.schldName }}</h4>
+            <!--<h4>{{ station.gpio }}</h4>-->
+            <!--<p>Station Information</p>-->
+        </div>
+        <md-switch class="md-primary" 
+                   ng-model="station.active" 
+                   ng-change="vm.updateCmd()"
+                   aria-label="Activate Station"></md-switch>
+    </md-list-item>
+    <!--<md-progress-linear md-mode="buffer" value="..." md-buffer-value="0"></md-progress-linear>-->
+    <md-progress-linear md-mode="query" md-buffer-value="0" ng-show="station.isRunning"></md-progress-linear>
+    <md-divider ng-repeat-end></md-divider>
+</md-list>
+
+<!--<div layout="row" layout-wrap>
+    <div flex="33" style="background-color:aquamarine;">
+        [flex="33"]
+    </div>
+    <div flex="55"  style="background-color:orange;">
+        [flex="55"]
+    </div>
+    <div flex  style="background-color:aquamarine;">
+        [flex]
+    </div>
+    <div flex="66" style="background-color:antiquewhite;">
+        [flex="66"]
+    </div>
+    <div flex style="background-color:blueviolet;">
+        [flex]
+    </div>
+</div>-->

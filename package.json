@@ -1,0 +1,19 @@
+{
+  "name": "omi_splinkr",
+  "version": "0.0.0",
+  "description": "omi_splinkr",
+  "main": "app.js",
+  "author": {
+    "name": "Priyakant",
+    "email": "mavs02@priyakant.com"
+  },
+  "dependencies": {
+    "async": "^1.4.2",
+    "body-parser": "^1.14.0",
+    "cron": "^1.0.9",
+    "express": "^4.13.3",
+    "onoff": "^1.0.2",
+    "socket.io": "^1.3.6",
+    "winston": "^1.0.1"
+  }
+}

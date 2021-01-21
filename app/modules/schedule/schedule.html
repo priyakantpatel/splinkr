@@ -1,0 +1,61 @@
+﻿<md-list>
+    <md-subheader class="md-no-sticky">Active Stations</md-subheader>
+    <md-divider ng-repeat-end></md-divider>
+    <md-list-item class="" ng-repeat-start="schld in vm.schedules">
+        <md-button class="md-fab md-mini md-primary"
+                   ng-disabled="schld.active"
+                   ng-click="schld.uiShowDetails=!schld.uiShowDetails;"
+                   aria-label="Station Information">
+            <md-icon md-font-set="material-icons">schedule</md-icon>
+        </md-button>
+        <h4>{{schld.name}}</h4>
+    </md-list-item>
+
+    <div layout="row" ng-show="schld.uiShowDetails" >
+        <md-switch flex ng-model="data.cb1" aria-label="Switch 1">Active</md-switch>
+        <div layout layout-align="center end">
+            <md-button flex class="md-icon-button" aria-label="More">
+                <md-icon md-font-set="material-icons">save</md-icon>
+            </md-button>
+        </div>
+    </div>
+
+    <div layout="row" ng-show="schld.uiShowDetails" >
+        <md-content layout-padding>
+            <div layout="row">
+                <div flex="5"></div>
+                <md-input-container flex><label>Second</label><input ng-model="schld.st_Second"></md-input-container>
+                <div flex="5"></div>
+                <md-input-container flex><label>Minute</label><input ng-model="schld.st_Minute"></md-input-container>
+                <div flex="5"></div>
+                <md-input-container flex><label>Hour</label><input ng-model="schld.st_Hour"></md-input-container>
+                <div flex="5"></div>
+            </div>
+            <div layout="row">
+                <div flex="5"></div>
+                <md-input-container flex><label>Day of Month</label><input ng-model="schld.st_DayOfMonth"></md-input-container>
+                <div flex="5"></div>
+                <md-input-container flex><label>Month</label><input ng-model="schld.st_Month"></md-input-container>
+                <div flex="5"></div>
+                <md-input-container flex><label>Day of week</label><input ng-model="schld.st_DayOfWeek"></md-input-container>
+                <div flex="5"></div>
+            </div>
+        </md-content>
+    </div>
+
+    <div layout="column" ng-show="schld.uiShowDetails" ng-if="job.active" ng-repeat="job in schld.jobs" layout-wrap>
+        <div flex layout="row" layout-align="center center">
+            <span>{{job.id}}</span>
+        </div>
+        <div flex layout="row">
+            <div flex="20" layout layout-align="center center">
+                <span>{{job.runTimeInSeconds}}</span>
+            </div>
+            <div flex style="padding-right:2em;">
+                <md-slider min="0" max="30" ng-model="job.runTimeInSeconds" aria-label="red"></md-slider>
+            </div>
+
+        </div>
+    </div>
+    <md-divider ng-repeat-end></md-divider>
+</md-list>
